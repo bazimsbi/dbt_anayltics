@@ -1,4 +1,10 @@
-
+{{
+    config(
+        materialized="view",
+        alias="customer_details",
+        schema="RAW"
+    )
+}}
 
 with final as (
     select c.r_name as region_name, 
