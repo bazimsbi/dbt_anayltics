@@ -13,7 +13,8 @@ with final as
     c_address,
     c_phone,
     n.n_name,
-    r.r_name
+    r.r_name,
+    n_regionkey
 from {{ source('my_project', 'customer') }} c 
 inner join {{ source('my_project', 'nation') }} n on c.c_nationkey = n.n_nationkey
 inner join {{ source('my_project', 'region') }} r on n.n_regionkey = r.r_regionkey
